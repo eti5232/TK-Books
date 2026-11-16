@@ -361,10 +361,19 @@
     "order": "Order",
     "total": "To pay",
     "now": "Pay (demo)",
-    "fail": "Demo: payment failure",
     "failed": "Payment failed (demo). You can try again.",
     "paying": "Processing payment…",
     "later": "You can also pay later: use \"Track order\" with your order code and email.",
-    "alreadyPaid": "This order has already been paid."
+    "alreadyPaid": "This order has already been paid.",
+    "holder": "Cardholder name",
+    "card": "Card number",
+    "expiry": "Expiry",
+    "badCard": "Card number must have 16 digits",
+    "testOnly": "In demo mode only a test card can be used",
+    "badExpiry": "Invalid expiry (MM/YY)",
+    "badCvv": "CVV is 3 digits",
+    "noRealCards": "Do not enter a real credit card!",
+    "testCards": "Test card: 4242 4242 4242 4242 (payment succeeds) or 4000 0000 0000 0002 (payment declined). Any future expiry and a 3-digit CVV. Details are not sent to the server or stored.",
+    "fillTest": "Fill test card"
   }
 }
