@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 380" width="300" height="380" role="img" aria-label="ליזי עם סל קניות / Lizzy shopping">
+<title>ליזי עם סל קניות / Lizzy shopping</title>
+
+<ellipse cx="150" cy="372" rx="78" ry="6" fill="#26324D" opacity=".12"/>
+
+  <circle cx="64" cy="156" r="36" fill="#7B4A2B"/><circle cx="236" cy="156" r="36" fill="#7B4A2B"/>
+  <rect x="68" y="108" width="22" height="14" rx="7" fill="#8FD3F4" transform="rotate(-25 79 115)"/>
+  <rect x="210" y="108" width="22" height="14" rx="7" fill="#8FD3F4" transform="rotate(25 221 115)"/>
+  <!-- רגליים -->
+  <rect x="124" y="326" width="16" height="30" fill="#FFD9B8"/><rect x="160" y="326" width="16" height="30" fill="#FFD9B8"/>
+  <rect x="122" y="350" width="20" height="14" fill="#fff"/><rect x="158" y="350" width="20" height="14" fill="#fff"/>
+  <rect x="114" y="362" width="34" height="14" rx="7" fill="#8FD3F4"/><rect x="152" y="362" width="34" height="14" rx="7" fill="#8FD3F4"/>
+  <!-- שמלה -->
+  <path d="M104 226 Q150 214 196 226 L228 334 Q150 352 72 334 Z" fill="#FF8FC1"/>
+  <path d="M72 334 Q150 352 228 334" fill="none" stroke="#F06BA8" stroke-width="6" stroke-linecap="round" stroke-dasharray="2 12"/>
+  <path d="M118 222 Q150 252 182 222 L172 216 Q150 236 128 216 Z" fill="#fff"/>
+  <circle cx="150" cy="268" r="6" fill="#fff"/><circle cx="150" cy="292" r="6" fill="#fff"/><path d="M194 238 Q213 276 216 308" fill="none" stroke="#FFD9B8" stroke-width="18" stroke-linecap="round"/><circle cx="216" cy="312" r="11" fill="#FFD9B8"/>
+  <g><path d="M60 300 Q84 262 108 300" fill="none" stroke="#C98B52" stroke-width="6" stroke-linecap="round"/>
+  <path d="M52 296 H116 L106 346 Q84 354 62 346 Z" fill="#C98B52"/>
+  <path d="M56 312 H112 M58 328 H110" stroke="#A56E3C" stroke-width="3"/>
+  <rect x="64" y="274" width="22" height="26" rx="4" fill="#8FD3F4"/><circle cx="98" cy="284" r="11" fill="#FF5FA2"/><rect x="70" y="262" width="16" height="16" rx="3" fill="#FFE9A8" transform="rotate(10 78 270)"/></g><path d="M106 238 Q92 268 84 296" fill="none" stroke="#FFD9B8" stroke-width="18" stroke-linecap="round"/>
+  <!-- ראש -->
+  <circle cx="150" cy="140" r="76" fill="#FFD9B8"/>
+  <path d="M74 130 Q78 60 150 58 Q222 60 226 130 Q205 96 150 100 Q95 96 74 130 Z" fill="#7B4A2B"/>
+  <path d="M100 100 Q130 84 156 100" fill="none" stroke="#5E3720" stroke-width="3" stroke-linecap="round" opacity=".5"/>
+  
+  <ellipse cx="120" cy="150" rx="10" ry="13" fill="#26324D"/><circle cx="123" cy="145" r="3.6" fill="#fff"/><circle cx="117" cy="155" r="1.6" fill="#fff"/>
+  <ellipse cx="180" cy="150" rx="10" ry="13" fill="#26324D"/><circle cx="183" cy="145" r="3.6" fill="#fff"/><circle cx="177" cy="155" r="1.6" fill="#fff"/>
+  <circle cx="98" cy="176" r="13" fill="#FF9DB8" opacity=".55"/><circle cx="202" cy="176" r="13" fill="#FF9DB8" opacity=".55"/>
+  <path d="M146 166 Q150 170 154 166" fill="none" stroke="#F5BF98" stroke-width="3" stroke-linecap="round"/>
+  <path d="M134 178 Q150 196 166 178" fill="none" stroke="#26324D" stroke-width="4.5" stroke-linecap="round"/>
+  <!-- פפיון -->
+  <ellipse cx="118" cy="62" rx="22" ry="13" fill="#FF5FA2" transform="rotate(-18 118 62)"/>
+  <ellipse cx="182" cy="62" rx="22" ry="13" fill="#FF5FA2" transform="rotate(18 182 62)"/>
+  <circle cx="150" cy="66" r="10" fill="#F06BA8"/>
+</svg>

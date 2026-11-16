@@ -1,0 +1,33 @@
+# תלויות ובניות
+node_modules/
+dist/
+*.tsbuildinfo
+.vitest-cache/
+
+# סודות והגדרות מקומיות – לעולם לא לגיט
+.env
+.env.*
+!.env.example
+
+# מסד נתונים מקומי וקבצים שהועלו בפיתוח
+.dev-db/
+uploads/
+*.log
+
+# קבצי ZIP וקבצים אישיים
+*.zip
+propmpt.txt
+.claude/
+
+# מערכת הפעלה / עורכים
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# פרויקטים אחרים שלא שייכים ל-TK Books
+car_learning/
+route_planner/
+snake_q_learning/
+אלגו/
+__pycache__/

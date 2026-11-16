@@ -1,0 +1,68 @@
+/*
+  TK Books – Design Tokens (CSS בלבד, לא React)
+  מעתיקים לקובץ הסגנון הגלובלי של ה-React (למשל src/styles/tokens.css) ומשתמשים ב-var(--...).
+  כל זוגות הצבעים המסומנים ✅ נבדקו ביחס ניגודיות WCAG AA (4.5:1 לטקסט רגיל).
+*/
+:root {
+  /* ===== ורוד ===== */
+  --pink-50:  #FFF5FA; /* רקע עמוד */
+  --pink-100: #FFE3F0; /* רקע כרטיסים/תגיות */
+  --pink-200: #FFD6E8;
+  --pink-300: #FFB3D6;
+  --pink-400: #FF8FC1; /* הצבע של השמלה של ליזי – קישוטים */
+  --pink-500: #E0559B; /* קישוט וכותרות גדולות בלבד (לא טקסט קטן!) */
+  --pink-600: #C2257A; /* כפתור ראשי; טקסט לבן עליו ✅ 5.47 */
+  --pink-700: #A81F66; /* קישורים וטקסט ורוד ✅ 6.88 על לבן, 5.73 על pink-100 */
+
+  /* ===== תכלת ===== */
+  --sky-50:  #EAF7FE; /* רקע אזורים */
+  --sky-100: #CBEBFB;
+  --sky-200: #8FD3F4; /* תכלת המותג – רקעים, כותרות ראש */
+  --sky-400: #4FB0E0;
+  --sky-600: #17709F; /* כפתור משני וקישורים ✅ 5.45 על לבן, 4.99 על sky-50 */
+
+  /* ===== טקסט ===== */
+  --ink-900: #26324D; /* טקסט ראשי ✅ 12.76 על לבן, 11.97 על pink-50 */
+  --ink-600: #5A6580; /* טקסט משני ✅ 5.82 על לבן */
+
+  /* ===== צבעי הדגשה וסטטוס ===== */
+  --sun-400: #FFD23F; /* כוכבים, "חדש!" – טקסט ink-900 עליו ✅ 8.84 */
+  --sun-100: #FFE9A8;
+  --success-600: #1E6B3D; --success-bg: #E3F6EA;
+  --danger-600:  #B3261E; --danger-bg:  #FFE8E6;
+  --warn-bg: #FFF1C7;
+
+  /* ===== משטחים ===== */
+  --surface: #FFFFFF;
+  --border: #F3C9DD;       /* מסגרת ורדרדה עדינה */
+  --focus-ring: #17709F;   /* טבעת פוקוס */
+
+  /* ===== טיפוגרפיה ===== */
+  --font-display: 'Rubik', 'Varela Round', system-ui, sans-serif; /* כותרות (עברית+אנגלית) */
+  --font-body: 'Assistant', 'Rubik', system-ui, sans-serif;       /* גוף טקסט */
+  --fs-xs: 0.8125rem; --fs-sm: 0.9375rem; --fs-md: 1.0625rem; --fs-lg: 1.25rem;
+  --fs-xl: 1.625rem;  --fs-2xl: 2.125rem; --fs-3xl: clamp(2.25rem, 5vw, 3.25rem);
+  --lh-tight: 1.2; --lh-body: 1.65;
+
+  /* ===== צורה ומרווח ===== */
+  --radius-sm: 12px; --radius-md: 20px; --radius-lg: 28px; --radius-pill: 999px;
+  --space-1: 4px; --space-2: 8px; --space-3: 12px; --space-4: 16px;
+  --space-5: 24px; --space-6: 32px; --space-7: 48px; --space-8: 72px;
+  --shadow-sm: 0 2px 6px rgba(194, 37, 122, 0.10);
+  --shadow-md: 0 8px 22px rgba(194, 37, 122, 0.14);
+  --shadow-sky: 0 8px 22px rgba(23, 112, 159, 0.16);
+  --shadow-pop: 0 4px 0 rgba(168, 31, 102, 0.9); /* צל "כפתור גומי" */
+
+  /* ===== תנועה ===== */
+  --ease-bounce: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --dur-fast: 140ms; --dur-med: 260ms;
+
+  /* ===== פריסה ===== */
+  --container: 1180px;
+  --tap-min: 44px; /* גודל מינימלי ללחיצה */
+}
+
+/* כבוד להעדפת "הפחתת תנועה" */
+@media (prefers-reduced-motion: reduce) {
+  :root { --dur-fast: 0ms; --dur-med: 0ms; }
+}

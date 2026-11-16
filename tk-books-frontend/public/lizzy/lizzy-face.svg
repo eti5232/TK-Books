@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="40 20 220 220" width="220" height="220" role="img" aria-label="ליזי / Lizzy"><title>ליזי / Lizzy</title>
+  <circle cx="64" cy="156" r="36" fill="#7B4A2B"/><circle cx="236" cy="156" r="36" fill="#7B4A2B"/>
+  <rect x="68" y="108" width="22" height="14" rx="7" fill="#8FD3F4" transform="rotate(-25 79 115)"/>
+  <rect x="210" y="108" width="22" height="14" rx="7" fill="#8FD3F4" transform="rotate(25 221 115)"/>
+  <!-- ראש -->
+  <circle cx="150" cy="140" r="76" fill="#FFD9B8"/>
+  <path d="M74 130 Q78 60 150 58 Q222 60 226 130 Q205 96 150 100 Q95 96 74 130 Z" fill="#7B4A2B"/>
+  <path d="M100 100 Q130 84 156 100" fill="none" stroke="#5E3720" stroke-width="3" stroke-linecap="round" opacity=".5"/>
+  
+  <ellipse cx="120" cy="150" rx="10" ry="13" fill="#26324D"/><circle cx="123" cy="145" r="3.6" fill="#fff"/><circle cx="117" cy="155" r="1.6" fill="#fff"/>
+  <ellipse cx="180" cy="150" rx="10" ry="13" fill="#26324D"/><circle cx="183" cy="145" r="3.6" fill="#fff"/><circle cx="177" cy="155" r="1.6" fill="#fff"/>
+  <circle cx="98" cy="176" r="13" fill="#FF9DB8" opacity=".55"/><circle cx="202" cy="176" r="13" fill="#FF9DB8" opacity=".55"/>
+  <path d="M146 166 Q150 170 154 166" fill="none" stroke="#F5BF98" stroke-width="3" stroke-linecap="round"/>
+  <path d="M134 178 Q150 196 166 178" fill="none" stroke="#26324D" stroke-width="4.5" stroke-linecap="round"/>
+  <!-- פפיון -->
+  <ellipse cx="118" cy="62" rx="22" ry="13" fill="#FF5FA2" transform="rotate(-18 118 62)"/>
+  <ellipse cx="182" cy="62" rx="22" ry="13" fill="#FF5FA2" transform="rotate(18 182 62)"/>
+  <circle cx="150" cy="66" r="10" fill="#F06BA8"/></svg>

@@ -1,0 +1,65 @@
+# Render Blueprint – פריסת ה-Backend של TK Books
+# מסד הנתונים ואחסון הקבצים נמצאים ב-Supabase (נפרדים מהשרת). ראי START-HERE.md.
+services:
+  - type: web
+    name: tk-books-api
+    runtime: node
+    plan: free
+    region: frankfurt
+    healthCheckPath: /api/health
+    buildCommand: npm ci && npm run build
+    # מריץ Migrations -> Seed (מנהלת + דמו אם הופעל) -> מפעיל את השרת. Render מספק PORT אוטומטית.
+    startCommand: npm run start:prod
+    envVars:
+      - key: NODE_VERSION
+        value: "22"
+      - key: NODE_ENV
+        value: production
+      - key: JWT_SECRET
+        generateValue: true # Render מייצר סוד אקראי חזק
+      - key: JWT_EXPIRES_IN
+        value: 8h
+      # --- ערכים שממלאים ידנית ב-Render (sync:false = לא נשמרים ב-GitHub) ---
+      - key: DATABASE_URL
+        sync: false
+      - key: CORS_ORIGIN
+        sync: false # כתובת אתר ה-React, למשל https://tk-books.netlify.app (אפשר כמה, מופרדות בפסיק)
+      - key: FRONTEND_URL
+        sync: false
+      - key: ADMIN_EMAIL
+        sync: false
+      - key: ADMIN_PASSWORD
+        sync: false
+      - key: SUPPORT_EMAIL
+        sync: false
+      - key: ADMIN_NOTIFY_EMAIL
+        sync: false
+      # --- תשלום: כרגע יש רק תשלום דמה (לא גובה כסף!). בייצור השרת מסרב לעלות עם דמה, אלא אם מגדירים true בכוונה (לבדיקות בלבד,
+      #     כי אז כל אחת מקבלת מוצרים בחינם). כשתהיה חברת סליקה אמיתית – מחליפים את הדמה בה. ---
+      - key: ALLOW_FAKE_PAYMENTS_IN_PRODUCTION
+        sync: false
+      # --- אחסון קבצים (Supabase Storage) ---
+      - key: STORAGE_DRIVER
+        value: supabase
+      - key: SUPABASE_URL
+        sync: false
+      - key: SUPABASE_SERVICE_KEY
+        sync: false
+      - key: SUPABASE_BUCKET_PUBLIC
+        value: tk-public
+      - key: SUPABASE_BUCKET_PRIVATE
+        value: tk-private
+      # --- מיילים (SMTP) – אופציונלי בהתחלה ---
+      - key: SMTP_HOST
+        sync: false
+      - key: SMTP_PORT
+        value: "587"
+      - key: SMTP_USER
+        sync: false
+      - key: SMTP_PASS
+        sync: false
+      - key: MAIL_FROM
+        sync: false
+      # --- נתוני הדגמה: true = ספרים/מוצרים לדוגמה. לשנות ל-false כשמוכנים לתוכן אמיתי ---
+      - key: SEED_DEMO
+        value: "true"
