@@ -1,5 +1,5 @@
-import { useBooks } from '../api/hooks';
-import { BookCard } from '../components/cards';
+import { useBooks } from '../hooks/useBooks';
+import { BookCard } from '../components/BookCard';
 import { ErrorBox, Loading, PageHeader } from '../components/ui';
 import { useLang } from '../i18n';
 

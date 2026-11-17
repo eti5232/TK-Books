@@ -1,10 +1,11 @@
 import { useEffect, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
-import { useBooks, useProducts } from '../api/hooks';
-import { ProductCard } from '../components/cards';
+import { useBooks } from '../hooks/useBooks';
+import { useProducts } from '../hooks/useProducts';
+import { ProductCard } from '../components/ProductCard';
 import { ErrorBox, Loading, Notice, PageHeader, Pagination } from '../components/ui';
 import { useLang } from '../i18n';
-import { pick } from '../lib/format';
+import { pick } from '../utils/format';
 
 const CATEGORIES = ['FLASHCARDS', 'SONGBOOK', 'PRINTABLES', 'STICKERS', 'STAMPS', 'OTHER'];
 

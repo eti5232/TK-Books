@@ -42,13 +42,20 @@ npm run dev
 ## מבנה
 ```
 src/
-  api/        client.ts (fetch + Token), hooks.ts (React Query)
-  context/    Cart (localStorage), Auth (JWT), Toast
-  i18n/       he.json, en.json
-  components/ Layout, Lizzy, cards, ui, Field
-  pages/      הדפים הציבוריים
-  admin/      אזור המנהלת (ResourceManager = CRUD גנרי)
-  styles/     tokens.css + global.css
+  main.tsx, App.tsx
+  api/         client.ts (fetch + Token) + קריאות לשרת: booksApi, productsApi, faqsApi, configApi
+  hooks/       React Query: useBooks, useProducts, useFaqs, useConfig
+  context/     Cart (localStorage), Auth (JWT), Toast
+  routes/      Routes.tsx (כל הנתיבים), ProtectedRoute.tsx (שומר על אזור המנהלת)
+  pages/       הדפים הציבוריים
+  pages/admin/ דפי המנהלת (התחברות, לוח בקרה, הזמנות, משאבים)
+  components/  Layout, AdminLayout, Lizzy, BookCard, ProductCard, MaterialItem
+  components/ui/     רכיבי UI קטנים (Modal, Tag, Field, Pagination...) + index.ts
+  components/admin/  ResourceManager (CRUD גנרי) ורכיבי ניהול
+  types/       api, book, product, order, admin (+ index.ts)
+  utils/       format.ts (מחירים, תאריכים, בחירת שפה)
+  i18n/        he.json, en.json
+  styles/      tokens.css + global.css
 public/lizzy/ דמות ליזי (SVG זמני)
 ```
 

@@ -1,9 +1,18 @@
 import { execSync } from 'node:child_process';
 import { describe, expect, it } from 'vitest';
 import { openApiSpec } from '../src/docs/openapi';
-import { addBusinessDays } from '../src/lib/businessDays';
-import { adminRouter } from '../src/routes/adminRoutes';
-import { publicRouter } from '../src/routes/publicRoutes';
+import { addBusinessDays } from '../src/utils/business-days';
+import type { Router } from 'express';
+import { adminRouter } from '../src/modules/admin/admin.routes';
+import { authRouter } from '../src/modules/auth/auth.routes';
+import { adminBooksRouter, booksRouter } from '../src/modules/books/books.routes';
+import { adminContactRouter, contactRouter } from '../src/modules/contact/contact.routes';
+import { downloadsRouter } from '../src/modules/downloads/downloads.routes';
+import { adminFaqsRouter, faqsRouter } from '../src/modules/faqs/faqs.routes';
+import { healthRouter } from '../src/modules/health/health.routes';
+import { adminMaterialsRouter, materialsRouter } from '../src/modules/materials/materials.routes';
+import { adminOrdersRouter, ordersRouter } from '../src/modules/orders/orders.routes';
+import { adminProductsRouter, productsRouter } from '../src/modules/products/products.routes';
 import { api } from './helpers';
 
 type Spec = {
@@ -15,7 +24,7 @@ const spec = openApiSpec as unknown as Spec;
 
 /** כל הנתיבים שרשומים בפועל ב-Express, בפורמט OpenAPI */
 function registeredRoutes(): string[] {
-  const collect = (router: typeof publicRouter, prefix: string): string[] => {
+  const collect = (router: Router, prefix: string): string[] => {
     const out: string[] = [];
     for (const layer of router.stack as unknown as { route?: { path: string; methods: Record<string, boolean> } }[]) {
       if (!layer.route) continue;
@@ -25,7 +34,9 @@ function registeredRoutes(): string[] {
     }
     return out;
   };
-  return [...collect(publicRouter, '/api'), ...collect(adminRouter, '/api/admin')];
+  const publicRouters = [healthRouter, authRouter, booksRouter, materialsRouter, faqsRouter, productsRouter, ordersRouter, downloadsRouter, contactRouter];
+  const adminRouters = [adminRouter, adminBooksRouter, adminMaterialsRouter, adminFaqsRouter, adminProductsRouter, adminOrdersRouter, adminContactRouter];
+  return [...publicRouters.flatMap((r) => collect(r, '/api')), ...adminRouters.flatMap((r) => collect(r, '/api/admin'))];
 }
 
 describe('Swagger / OpenAPI', () => {
@@ -81,7 +92,7 @@ describe('Prisma', () => {
 
 describe('אילוצי מסד נתונים (CHECK)', () => {
   it('כמות 11 / מחיר שלילי נחסמים ברמת ה-DB', async () => {
-    const { prisma } = await import('../src/lib/prisma');
+    const { prisma } = await import('../src/db/prisma');
     await expect(prisma.$executeRawUnsafe(`INSERT INTO "Product"(id,slug,kind,category,"nameHe","nameEn","priceAgorot","updatedAt") VALUES ('x1','neg','PHYSICAL','OTHER','a','a',-5,now())`)).rejects.toThrow();
   });
 });

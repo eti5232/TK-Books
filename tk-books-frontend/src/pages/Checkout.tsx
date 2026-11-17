@@ -2,12 +2,12 @@ import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { Link, useNavigate } from 'react-router-dom';
 import { api, ApiError } from '../api/client';
-import { Field } from '../components/Field';
+import { Field } from '../components/ui/Field';
 import { InfoBox, Notice, PageHeader } from '../components/ui';
 import { useCart } from '../context/CartContext';
-import { useConfig } from '../api/hooks';
+import { useConfig } from '../hooks/useConfig';
 import { useLang } from '../i18n';
-import { money, pick } from '../lib/format';
+import { money, pick } from '../utils/format';
 
 interface Form {
   customerName: string;

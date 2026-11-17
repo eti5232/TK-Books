@@ -1,5 +1,5 @@
 import multer from 'multer';
-import { badRequest } from '../lib/errors';
+import { badRequest } from '../utils/app-error';
 
 export const MAX_UPLOAD_BYTES = 25 * 1024 * 1024;
 

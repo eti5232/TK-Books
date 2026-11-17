@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Link, Navigate, useLocation } from 'react-router-dom';
 import { Lizzy } from '../components/Lizzy';
 import { useLang } from '../i18n';
-import { daysLeft, money, pick } from '../lib/format';
+import { daysLeft, money, pick } from '../utils/format';
 import type { TrackedOrder } from '../types';
 
 export default function OrderSuccess() {

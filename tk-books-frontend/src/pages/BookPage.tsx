@@ -1,10 +1,13 @@
 import { useSearchParams, useParams } from 'react-router-dom';
-import { useBook, useFaqs, useMaterials, useProducts } from '../api/hooks';
-import { MaterialItem, ProductCard } from '../components/cards';
+import { useBook, useMaterials } from '../hooks/useBooks';
+import { useFaqs } from '../hooks/useFaqs';
+import { useProducts } from '../hooks/useProducts';
+import { MaterialItem } from '../components/MaterialItem';
+import { ProductCard } from '../components/ProductCard';
 import { Lizzy } from '../components/Lizzy';
 import { Accordion, BackLink, ErrorBox, Loading, Notice } from '../components/ui';
 import { useLang } from '../i18n';
-import { accentFor, pick } from '../lib/format';
+import { accentFor, pick } from '../utils/format';
 import type { MaterialType } from '../types';
 import Reader from './Reader';
 

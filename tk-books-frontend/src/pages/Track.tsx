@@ -2,11 +2,11 @@ import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { Link, useSearchParams } from 'react-router-dom';
 import { api, ApiError } from '../api/client';
-import { Field } from '../components/Field';
+import { Field } from '../components/ui/Field';
 import { Lizzy } from '../components/Lizzy';
 import { PageHeader, Tag } from '../components/ui';
 import { useLang } from '../i18n';
-import { daysLeft, fmtDate, money, pick } from '../lib/format';
+import { daysLeft, fmtDate, money, pick } from '../utils/format';
 import type { OrderStatus, TrackedOrder } from '../types';
 
 const STEPS: OrderStatus[] = ['PENDING', 'PAID', 'ORDERED', 'SHIPPED', 'DELIVERED'];

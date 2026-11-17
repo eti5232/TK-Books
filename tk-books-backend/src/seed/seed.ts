@@ -1,10 +1,10 @@
 import bcrypt from 'bcryptjs';
 import type { MaterialType, ProductCategory, ProductKind } from '@prisma/client';
 import { env } from '../config/env';
-import { addBusinessDays, addDays } from '../lib/businessDays';
-import { generateDownloadToken } from '../lib/orderCode';
-import { prisma } from '../lib/prisma';
-import { ensureBuckets, saveFile } from '../services/storageService';
+import { addBusinessDays, addDays } from '../utils/business-days';
+import { generateDownloadToken } from '../utils/order-code';
+import { prisma } from '../db/prisma';
+import { ensureBuckets, saveFile } from '../services/storage.service';
 import { placeholderPageWebp, placeholderPng, samplePdf } from './placeholders';
 
 const PAGES_PER_BOOK = 6;

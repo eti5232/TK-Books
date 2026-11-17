@@ -1,12 +1,12 @@
 import { useState } from 'react';
 import { Link, Navigate, useLocation, useNavigate } from 'react-router-dom';
 import { api, ApiError } from '../api/client';
-import { useConfig } from '../api/hooks';
-import { Field } from '../components/Field';
+import { useConfig } from '../hooks/useConfig';
+import { Field } from '../components/ui/Field';
 import { Lizzy } from '../components/Lizzy';
 import { InfoBox, PageHeader } from '../components/ui';
 import { useLang } from '../i18n';
-import { money } from '../lib/format';
+import { money } from '../utils/format';
 import type { TrackedOrder } from '../types';
 
 interface PayState {

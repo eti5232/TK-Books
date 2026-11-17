@@ -4,11 +4,21 @@ import helmet from 'helmet';
 import swaggerUi from 'swagger-ui-express';
 import { env } from './config/env';
 import { openApiSpec } from './docs/openapi';
-import { errorHandler, notFoundHandler } from './middleware/errorHandler';
-import { generalLimiter } from './middleware/rateLimit';
-import { adminRouter } from './routes/adminRoutes';
-import { publicRouter } from './routes/publicRoutes';
-import { localPublicDir } from './services/storageService';
+import { errorHandler, notFoundHandler } from './middleware/error-handler';
+import { generalLimiter } from './middleware/rate-limit';
+import { authenticate } from './middleware/authenticate';
+import { requireAdmin } from './middleware/authorize';
+import { adminRouter } from './modules/admin/admin.routes';
+import { authRouter } from './modules/auth/auth.routes';
+import { adminBooksRouter, booksRouter } from './modules/books/books.routes';
+import { adminContactRouter, contactRouter } from './modules/contact/contact.routes';
+import { downloadsRouter } from './modules/downloads/downloads.routes';
+import { adminFaqsRouter, faqsRouter } from './modules/faqs/faqs.routes';
+import { healthRouter } from './modules/health/health.routes';
+import { adminMaterialsRouter, materialsRouter } from './modules/materials/materials.routes';
+import { adminOrdersRouter, ordersRouter } from './modules/orders/orders.routes';
+import { adminProductsRouter, productsRouter } from './modules/products/products.routes';
+import { localPublicDir } from './services/storage.service';
 
 export function createApp(): Express {
   const app = express();
@@ -49,8 +59,11 @@ export function createApp(): Express {
   app.get('/', (_req, res) => {
     res.json({ name: 'TK Books API', docs: '/api-docs', health: '/api/health' });
   });
-  app.use('/api/admin', adminRouter);
-  app.use('/api', publicRouter);
+  // ניהול: כל מה שמתחת מחייב Token של מנהלת
+  app.use('/api/admin', authenticate, requireAdmin, adminRouter, adminBooksRouter, adminMaterialsRouter, adminFaqsRouter, adminProductsRouter, adminOrdersRouter, adminContactRouter);
+
+  // ציבורי
+  app.use('/api', healthRouter, authRouter, booksRouter, materialsRouter, faqsRouter, productsRouter, ordersRouter, downloadsRouter, contactRouter);
 
   app.use(notFoundHandler);
   app.use(errorHandler);

@@ -12,15 +12,21 @@
 
 ```
 src/
+  app.ts, server.ts   הרכבת האפליקציה והפעלה
   config/        הגדרות סביבה (env.ts)
-  routes/        הגדרת הנתיבים (ציבורי + מנהלת)
-  controllers/   קבלת בקשה → קריאה ל-service → תשובה
-  services/      הלוגיקה העסקית (הזמנות, הורדות, מיילים, אחסון קבצים...)
-  validation/    סכמות Zod לבדיקת קלט
-  middleware/    אימות JWT, הרשאות, שגיאות, הגבלת קצב, העלאות
+  db/            חיבור ל-Prisma
+  auth/          JWT
+  middleware/    authenticate, authorize, validate, error-handler, rate-limit, upload
+  modules/       כל נושא בתיקייה משלו, ובה 4 קבצים:
+                   x.routes.ts      הנתיבים (ציבורי + ניהול)
+                   x.controller.ts  קבלת בקשה → קריאה ל-service → תשובה
+                   x.service.ts     הלוגיקה העסקית
+                   x.schemas.ts     סכמות Zod לבדיקת קלט
+                 auth · books · materials · faqs · products · orders · downloads · contact · admin · health
+  services/      שירותים משותפים: storage, email, email-templates, payment
+  utils/         app-error, async-handler, business-days, order-code, validation
   docs/          מפרט OpenAPI (Swagger)
   seed/          נתוני הדגמה + יצירת מנהלת
-  lib/           כלים קטנים (JWT, ימי עסקים, קודי הזמנה)
 prisma/          schema.prisma + migrations
 tests/           בדיקות אוטומטיות
 docs/            openapi.json, REPLACE-DEMO-CONTENT.md

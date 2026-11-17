@@ -1,7 +1,7 @@
 import { beforeAll, describe, expect, it } from 'vitest';
-import { prisma } from '../src/lib/prisma';
+import { prisma } from '../src/db/prisma';
 import { samplePdf } from '../src/seed/placeholders';
-import { saveFile } from '../src/services/storageService';
+import { saveFile } from '../src/services/storage.service';
 import { adminToken, api, auth, makeBook, makeProduct, pngBuffer, resetDb } from './helpers';
 
 let token: string;

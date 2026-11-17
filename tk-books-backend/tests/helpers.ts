@@ -2,9 +2,9 @@ import bcrypt from 'bcryptjs';
 import request from 'supertest';
 import sharp from 'sharp';
 import { createApp } from '../src/app';
-import { prisma } from '../src/lib/prisma';
+import { prisma } from '../src/db/prisma';
 import { samplePdf } from '../src/seed/placeholders';
-import { saveFile } from '../src/services/storageService';
+import { saveFile } from '../src/services/storage.service';
 
 export const app = createApp();
 export const api = (): ReturnType<typeof request> => request(app);

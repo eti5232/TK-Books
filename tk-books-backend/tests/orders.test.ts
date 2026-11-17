@@ -1,5 +1,5 @@
 import { beforeAll, beforeEach, describe, expect, it } from 'vitest';
-import { prisma } from '../src/lib/prisma';
+import { prisma } from '../src/db/prisma';
 import { address, adminToken, api, auth, makeProduct, resetDb, validOrder } from './helpers';
 
 let token: string;

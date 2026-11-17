@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
-import { useBooks } from '../api/hooks';
-import { BookCard } from '../components/cards';
+import { useBooks } from '../hooks/useBooks';
+import { BookCard } from '../components/BookCard';
 import { Lizzy } from '../components/Lizzy';
 import { ErrorBox, Loading } from '../components/ui';
 import { useLang } from '../i18n';

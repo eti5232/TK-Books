@@ -1,8 +1,8 @@
 import { useState } from 'react';
-import { useFaqs } from '../api/hooks';
+import { useFaqs } from '../hooks/useFaqs';
 import { Accordion, ErrorBox, Loading, Notice, PageHeader } from '../components/ui';
 import { useLang } from '../i18n';
-import { pick } from '../lib/format';
+import { pick } from '../utils/format';
 
 export default function FaqPage() {
   const { t, lang } = useLang();

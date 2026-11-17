@@ -1,12 +1,13 @@
 import { useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
-import { useConfig, useProduct, useProducts } from '../api/hooks';
-import { ProductCard } from '../components/cards';
+import { useConfig } from '../hooks/useConfig';
+import { useProduct, useProducts } from '../hooks/useProducts';
+import { ProductCard } from '../components/ProductCard';
 import { BackLink, ErrorBox, InfoBox, Loading, QuantityInput, Tag } from '../components/ui';
 import { useCart } from '../context/CartContext';
 import { useToast } from '../context/ToastContext';
 import { useLang } from '../i18n';
-import { money, pick } from '../lib/format';
+import { money, pick } from '../utils/format';
 
 export default function ProductPage() {
   const { slug } = useParams();

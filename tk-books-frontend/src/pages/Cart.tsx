@@ -1,9 +1,9 @@
 import { Link, useNavigate } from 'react-router-dom';
-import { useConfig } from '../api/hooks';
+import { useConfig } from '../hooks/useConfig';
 import { InfoBox, Notice, PageHeader, QuantityInput } from '../components/ui';
 import { useCart } from '../context/CartContext';
 import { useLang } from '../i18n';
-import { money, pick } from '../lib/format';
+import { money, pick } from '../utils/format';
 
 export default function Cart() {
   const { t, lang } = useLang();
